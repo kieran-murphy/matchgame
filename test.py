@@ -4,7 +4,7 @@ import random
 import time
 
 doggochoices = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8]
-choice = ['2']
+choice = ['1']
 
 class Box:
     def __init__(self, box_x, box_y, id):
@@ -58,8 +58,9 @@ class App:
         pygame.init()
         #flags = RESIZABLE
         App.screen = pygame.display.set_mode((500, 600))
-        
+        App.boxes = pygame.sprite.Group()
         App.b1 = Box(100,100,1)
+        App.boxes.add(App.b1)
         App.b2 = Box(200,100,2)
         App.b3 = Box(300,100,3)
         App.b4 = Box(400,100,4)
@@ -142,22 +143,7 @@ class App:
             WHITE=(255,255,255)
             App.screen.fill(WHITE)
             
-            App.b1.draw()
-            App.b2.draw()
-            App.b3.draw()
-            App.b4.draw()
-            App.b5.draw()
-            App.b6.draw()
-            App.b7.draw()
-            App.b8.draw()
-            App.b9.draw()
-            App.b10.draw()
-            App.b11.draw()
-            App.b12.draw()
-            App.b13.draw()
-            App.b14.draw()
-            App.b15.draw()
-            App.b16.draw()
+            App.boxes.draw()
             pygame.display.update()
         pygame.quit()
 
